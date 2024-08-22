@@ -11,24 +11,22 @@ import org.zerock.domain.BoardVO;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
-import oracle.net.ano.Service;
 
 @RunWith(SpringJUnit4ClassRunner.class)  // 메서드별 테스트용 JUnit4
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml") // 참고할 파일
 @Log4j2 
-
 public class BoardServiceTests {
-
-	@Setter(onMethod_ = @Autowired)
-	private BoardService service;  // setService(BoardService) 객체가 만들어짐
 	
-	@Test 
+	@Setter(onMethod_ = @Autowired)
+	private BoardService service; 	// setService(BoardService) 
+	
+	@Test
 	public void testExist() {
 		// 객체 생성 유무 판단용 테스트
-		log.info(service);			// 인터페이스를 필드로 생성 하였는데 서비스객체를 실행하면 impl이 붙은 클래스가 실행됨.
-		assertNotNull(service);
-		
+		log.info(service); // 인터페이스를 필드로 생성 하였는데 서비스객체를 실행하면 Impl이 붙은 클래스가 실행됨
+		assertNotNull(service); 
 	}
+	
 	
 	@Test
 	public void testRegister() {
@@ -40,8 +38,7 @@ public class BoardServiceTests {
 		
 		service.register(board);
 		
-		log.info("등록된 게시물의 번호 : " + board.getBno());		
-		
+		log.info("등록된 게시물의 번호 : " + board.getBno());
 	}
 	
 	@Test
@@ -59,12 +56,10 @@ public class BoardServiceTests {
 	public void testUpdate() {
 		
 		BoardVO board = service.get(1L);
-		
-		if ( board == null) {
+		if (board == null) {
 			log.info("찾는 객체가 없습니다.");
 			return;
 		}
-		
 		board.setTitle("서비스에서 수정한 제목");
 		log.info("서비스에서 수정메서드 결과 : " + service.modify(board)); // boolean
 	}
@@ -73,47 +68,9 @@ public class BoardServiceTests {
 	@Test
 	public void testDelete() {
 		
-		log.info("삭제된 결과 : " + service.remove(2L));
+		log.info("삭제된 결과 :" + service.remove(2L));
+		
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 }
