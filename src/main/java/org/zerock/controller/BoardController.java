@@ -32,7 +32,7 @@ public class BoardController {
 		
 	}
 	
-	@GetMapping("/register")  // http://localhost:80/board/register
+	@GetMapping("/register")	// http://localhost:80/board/register
 	public void register() {
 		log.info("BoardController.register get메서드 실행");
 		
@@ -43,7 +43,7 @@ public class BoardController {
 	public String register(BoardVO board, RedirectAttributes rttr) {
 		// RedirectAttributes rttr -> 1회성을 같는 값을 제공 -> addFlashAttribute("이름","값");
 		
-		log.info("BoardController.register메서드 실행");
+		log.info("BoardController.register post메서드 실행");
 		service.register(board); // 프론트에서 form 값이 객체로 넘어옴
 		
 		rttr.addFlashAttribute("result", board.getBno()); // 객체에 있는 bno값을 1회성으로 가지고 있음(model영역)
@@ -54,7 +54,7 @@ public class BoardController {
 	}
 	
 	
-	@GetMapping({"/get","/modify"}) 
+	@GetMapping({"/get","/modify"})  	
 	//이중화 작업 :  http://localhost:80/board/get -> board/get.jsp
 	//이중화 작업 :  http://localhost:80/board/modify -> board/modify.jsp
 	public void get(@RequestParam("bno") Long bno, Model model) {

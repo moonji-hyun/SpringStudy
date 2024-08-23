@@ -3,8 +3,8 @@
     </div>
     <!-- /#wrapper -->
 
-    <!-- jQuery header.jsp로 이동 버전 향상
-    <script src="/resources/vendor/jquery/jquery.min.js"></script>   -->
+    <!-- jQuery header.jsp로 이동 버전향상
+    <script src="/resources/vendor/jquery/jquery.min.js"></script> -->
 
     <!-- Bootstrap Core JavaScript -->
     <script src="/resources/vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -26,10 +26,10 @@
         $('#dataTables-example').DataTable({
             responsive: true
         });
-        $(".sidebar-nav")	/* sbAdmin2 부트스트랩 메뉴바 활성 버그 수정용 */
+        $(".sidebar-nav") /* sbAdmin2 부트스트랩 메뉴바 활성 버그 수정용 */
         .attr("class","sidebar-nav navbar-collapse collapse")
-        .attr("aria-expended",'alse')
-        .attr("style","height:1px");
+        .attr("aria-expanded",'false')
+        .attr("style","height:1px"); 
     });
     </script>
 

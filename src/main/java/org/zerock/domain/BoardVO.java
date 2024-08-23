@@ -1,7 +1,5 @@
 package org.zerock.domain;
 
-
-
 import java.sql.Date;
 
 import lombok.Data;
